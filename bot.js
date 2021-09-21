@@ -175,7 +175,7 @@ bot.on("messageCreate", (msg) => {
 						}
 						var url;
 						// Get the song, by position in queue or by the URL or get first youtube search result
-						if (typeof toNumber(args[0]) != NaN) {
+						if (typeof Number(args[0]) != NaN) {
 							// If cant find pos, return bullshit
 							if (connections[msg.member.guild.id].queue[args[0] - 1] == undefined) {
 								bot.createMessage(msg.channel.id, "theres no song at that position in the queue are you blind");
@@ -238,10 +238,6 @@ bot.on("messageCreate", (msg) => {
 			case "resume":
 				var connection = connections[msg.member.guild.id].connection;
 				connection.resume();
-				break;
-			case "clear":
-				var queue = connections[msg.member.guild.id]
-				connections[msg.member.guild.id] = undefined;
 				break;
 			case "copypasta":
 				var content = copypasta[args[0]];
