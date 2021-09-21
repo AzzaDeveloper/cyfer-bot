@@ -108,7 +108,7 @@ bot.on("messageCreate", (msg) => {
 		// Commands
 		switch(cmd) {
 			case "help":
-				bot.createMessage(msg.channel.id, "Cyfer is a bot that does whatever you think it does. Made by Cy.");
+				bot.createMessage(msg.channel.id, "Cyfer is a bot that does whatever you think it does. Made by Azza.\nYou can view a list of commands here: https://github.com/AzzaDeveloper/cyfer-bot/wiki");
 				break;
 			case "profile":
 			case "p":
@@ -175,7 +175,7 @@ bot.on("messageCreate", (msg) => {
 						}
 						var url;
 						// Get the song, by position in queue or by the URL or get first youtube search result
-						if (typeof args[0] == "number") {
+						if (typeof toNumber(args[0]) != NaN) {
 							// If cant find pos, return bullshit
 							if (connections[msg.member.guild.id].queue[args[0] - 1] == undefined) {
 								bot.createMessage(msg.channel.id, "theres no song at that position in the queue are you blind");
