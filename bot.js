@@ -172,6 +172,9 @@ bot.on("messageCreate", (msg) => {
 									connections[msg.member.guild.id].active = false;
 								}				
 							})
+							voiceConnection.on("error", (error) => {
+								console.log(error);	
+							})
 						}
 						var url;
 						// Get the song, by position in queue or by the URL or get first youtube search result
