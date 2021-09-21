@@ -175,7 +175,7 @@ bot.on("messageCreate", (msg) => {
 						}
 						var url;
 						// Get the song, by position in queue or by the URL or get first youtube search result
-						if (Number(args[0]) != NaN) {
+						if (!isNaN(parseInt(args[0]))) {
 							// If cant find pos, return bullshit
 							if (connections[msg.member.guild.id].queue[args[0] - 1] == undefined) {
 								bot.createMessage(msg.channel.id, "theres no song at that position in the queue are you blind");
